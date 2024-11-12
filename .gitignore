@@ -1,3 +1,6 @@
+# Node modules
+node_modules/
+
 # Logs
 logs
 *.log
@@ -5,20 +8,37 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Vite cache
+.vite
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.idea/
+.vscode/
+*.sublime*
+
+# Dependency directories
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Build output
+dist/
+
+# Optional: Ignore temporary build files
+temp/
+.tmp/
+
+# Optional: Ignore coverage reports
+coverage/
+
+# Optional: Ignore TypeScript declaration files (if not using TS in the project)
+*.d.ts

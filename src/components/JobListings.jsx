@@ -6,10 +6,12 @@ import Spinner from "../components/Spinner";
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const apiUrl = isHome ? "http://localhost:3000/jobs?_limit=3" : "http://localhost:3000/jobs"
+ 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/jobs");
+        const res = await fetch(apiUrl);
         const jobs = await res.json();
         setJobs(jobs);
       } catch (error) {

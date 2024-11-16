@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddJobPage = ({ addJob }) => {
   const [title, setTitle] = useState("");
@@ -31,6 +32,8 @@ const AddJobPage = ({ addJob }) => {
       },
     };
     addJob(newJob);
+
+    toast.success("Successfully Added Job")
 
     navigate("/jobs");
   };

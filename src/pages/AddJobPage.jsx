@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddJobPage = ({ addJobSubmit }) => {
+const AddJobPage = ({ addJob }) => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
   const [description, setDescription] = useState("");
@@ -30,7 +30,7 @@ const AddJobPage = ({ addJobSubmit }) => {
         contactPhone,
       },
     };
-    addJobSubmit(newJob);
+    addJob(newJob);
 
     navigate("/jobs");
   };

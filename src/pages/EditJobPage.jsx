@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { useParams, useNavigate, useLoaderData } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const EditJobPage = ({ updateJob }) => {
   const job = useLoaderData();
-  const { id } = useParams();
 
+  const id = job.id;
   const [title, setTitle] = useState(job.title);
   const [type, setType] = useState(job.type);
   const [description, setDescription] = useState(job.description);
@@ -37,7 +37,7 @@ const EditJobPage = ({ updateJob }) => {
         contactPhone,
       },
     };
-    
+
     updateJob(job);
 
     toast.success("Successfully Edited Job");
